@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .error{
+                background-color: green;
+                text-align: left;
+                max-height: 100px;
+                transition: max-height 1s ease-in;
+            }
+            
+            .big{
+                 max-height: 100px;
+                transition: max-height 1s ease-in;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class='error'>TODO write content</div>
+        <div>TODO write content</div>
+        <script>
+            
+            var element = document.querySelector('div.error');
+            
+            element.classList.add('error');
+            element.classList.add('big');
+            
+            //element.style.backgroundColor='blue';
+            element.style.textAlign='center';
+        </script>
+    </body>
+</html>
