@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .error {
+                background-color: green;
+                text-align: left;
+                width: 50px;
+                transition: width 5s;
+            }
+            
+            .big {
+                width: 1000px
+                
+            }
+            
+            
+            </style>
+    </head>
+    <body>
+        <div class="error">TODO write content</div>
+        
+        <button>Click Me!</button>
+        <script>
+            
+             /*
+             * Mouse Events	Keyboard Events	Form Events	Document/Window Events
+                click           keypress	submit          load
+                dblclick	keydown         change          resize
+                mouseenter	keyup           focus           scroll
+                mouseleave      input           blur            unload
+                
+             */
+            
+            var div = document.querySelector('.error');
+            
+            document.querySelector('button').addEventListener('click', clickME);
+            
+            
+            function clickME(e) {
+                console.log(e);
+                 div.classList.add('big');
+            }
+        
+            
+            </script>
+        
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+         <p>
+            Rating: <input name="rating" type="number" max="5" min="1" />
+            <input type="checkbox" name="test" value="1"/>
+        </p>
+        
+        <script>
+            
+            
+            document.querySelector('input[name="rating"]').addEventListener("focus", function(){
+               this.style.backgroundColor = 'lightblue';
+            });
+            
+            function reset(e) {
+                //console.log(this.value)
+                this.value=5
+                this.style.backgroundColor = 'transparent';
+            }
+            
+              document.querySelector('input[name="rating"]').addEventListener("blur", reset);
+            this.style.checkbox=''
+            </script>
+    </body>
+</html>

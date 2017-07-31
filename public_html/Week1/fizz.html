@@ -8,19 +8,28 @@
     <body>
         <div>TODO write content</div>
         <script>
-            var two  = 0;
-            var three = false;
-            if (two == three) {
-                console.log('two is fizz');
-
-            } 
-            if (three === two) {
-                console.log('three is fizz');
-
-            } 
-            else {
+            
+                        
+              for (var i = 0; i < 100; i++)
+            {
+                if (i % 2==0 && i% 3==0) {
                 console.log('fizz buzz');
+
+            } 
+           else if (i%2 == 0) {
+                console.log('fizz');
+
+            } 
+            else if (i%3 == 0) {
+                console.log('buzz');
+
+            }else{
+                
+            console.log(i); // logs 0 - 100 to the canvas.
             }
+        } 
+            
+            
         </script>
     </body>
 

@@ -8,29 +8,36 @@
     <body>
         <div>TODO write content</div>
         <script>
-     var two  = 0;
-            var three = false;
-            if (two == three) {
-                console.log('two is fizz');
+            var index={};
+            
+            
+            var label={};
+            
+            label['twoThree']='fizzbuzz';
+            label['two']='fizz';
+            label['three']='buzz';
+            
+                        
+              for (index = 0; index < 100; index++)
+            {
+                if (index % 2==0 && index% 3==0) {
+                console.log(label['twoThree']);
 
             } 
-            if (three === two) {
-                console.log('three is fizz');
+           else if (index % 2 == 0) {
+                console.log(label['two']);
 
             } 
-            else {
-                console.log('fizz buzz');
+            else if (index % 3 == 0) {
+                console.log(label['three']);
+
+            }else{
+                
+            console.log(index); // logs 0 - 100 to the canvas.
             }
-            myArray = [
-                "Fizz",
-                "Buzz",
-                "Fizz Buzz"
-            ]
-            var myObject = {
-                firstName: "Chan",
-                lastName: "Uy"
-            }
-            myObject.lastName
+        } 
+            
+            
         </script>
     </body>
 

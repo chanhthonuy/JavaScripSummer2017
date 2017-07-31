@@ -9,22 +9,32 @@
     <body>
         <div>TODO write content</div>
         <script type="text/javascript">
-            
-            var names ={};
-            
-            names.first='chan';
-            names.last='uy';
-            
+            //array of objects
+            var arr = [
+            {'doors' :3, 'rooms' = 5},
+            {'doors' : 4, 'rooms' = 3},
+            {'doors' : 7, 'rooms' = 9},
+            ];
+            //objects 
+            var home = {
+            'Bathrooms':{
+            'fullbath': 1
+                    'halfbath': 2
+            };
+            'doors': {}
+            'rooms':{}
+            };
+            names.first = 'chan';
+            names.last = 'uy';
             names['first'] = 'chan';
             names['last'] = 'uy';
-            
             var str = 'first';
             console.log(names[str]);
             console.log(names['last']);
             console.log(names.last);
             console.log(names['first']);
             console.log(names.first);
-            
-            </script>
+
+        </script>
     </body>
 </html>
