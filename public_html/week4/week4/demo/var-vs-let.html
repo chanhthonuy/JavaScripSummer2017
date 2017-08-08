@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script type="text/javascript">
+            
+            /*
+             * This is just an advance JS tech to fill in the array
+             */
+            var items = new Array(100).fill(0).map(function() {
+                return Math.floor (Math.random() * (100 - 1 + 1)) + 1 
+            })
+            
+            console.log(items);
+            
+           /*  Notice we create the variable x just for the loop
+            *  but the variable will still exisit after the loop is over
+            */
+            for (var x in items) { }
+            console.log('x', x);
+            
+            /*
+             * We create the variable i just for the for loop and the
+             * life of i will only be available inside the for loop. 
+             */
+            for (let i in items) { }
+            console.log('i', i);
+                   
+            
+            
+            
+        </script>
+    </body>
+</html>

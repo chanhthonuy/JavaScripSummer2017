@@ -46,13 +46,13 @@ function animate()
     //call the drawCar() function and pass it your car object
     drawCar(car);
     //Assign the colorInput's value to the car's color property
-
+color.Input=colorInput.value;
     //convert the roofSlider's value to a number and assign it to the car's roof property
-roof.Slider = roofSlider.value
+roof.Slider = roofSlider.value;
     //convert the frontSlider's value to a number and assign it to the car's front property
-ft.Slider = ftSlider.value
+ft.Slider = ftSlider.value;
     //convert the rearSlider's value to a number and assign it to the car's rear property
-
+rear.Slider=rearSlider.value;
     //convert the carWidth's value to a number and assign it to the car's width property
     car.width = carWidth.value;
     //set the roof, front and rear sliders' .max attributes to the car's topLimit property
