@@ -39,17 +39,15 @@ function showCalendar(mth, yr) {
     str += '<div class="row">';    
     
     for (let day = 1; day < numberOfDaysInMonth; day++) {
-        if (day > firstDayOfWeek) {
-            
-            
+        if (day > firstDayOfWeek) {                       
             str += '<div class="day">'
-            str += (day-firstDayOfWeek)  
-           
+            str += (day-firstDayOfWeek)            
             str += '</div>'
-        } else {
-            str += '<div class="day"></div>'
-                     
+            
+        } else {            
+            str += '<div class="day"></div>'                    
         }
+                
         if (day == 7 || day == 14 || day == 21 || day == 28){
             str += '</div>'
             str +='<div class="row">'
@@ -61,7 +59,14 @@ function showCalendar(mth, yr) {
 str += '</div>'
 
     $('#results').html(str);
-
+    
+ $( "div" ).click(checkDiv);
+                        
+        function checkDiv() {
+          $( this ).css( "background-color", 'green' );
+          let color = $( this ).css( "background-color" );
+          console.log(color);
+        }
 
 
 }
