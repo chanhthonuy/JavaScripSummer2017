@@ -43,7 +43,8 @@ function showCalendar(mth, yr) {
             
             
             str += '<div class="day">'
-            str += (day-firstDayOfWeek)           
+            str += (day-firstDayOfWeek)  
+           
             str += '</div>'
         } else {
             str += '<div class="day"></div>'
