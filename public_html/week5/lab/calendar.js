@@ -16,7 +16,8 @@ $(document).ready(function () {
         showCalendar($('#month').val(), $('#year').val());
     });
     
-    $("yes").click(daysgreen)
+    $("#yes").click(daysGreen);
+    $("#no").click(daysRed);
 });
 
 
@@ -84,6 +85,10 @@ function checkDiv() {
 
 function daysGreen(){
     $(".day").css('background-color', 'green');
+}
+
+function daysRed(){
+    $(".day").css('background-color', 'red');
 }
 
 
