@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Handle Dom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>        
+        <section>
+            <h1>Data Entry Form</h1>
+            <div>                
+                <input name="fullname" type="text" required />
+                <label>Name</label>  
+                <span class="fullname">Error Message</span>
+            </div>
+            <div>                
+                <input name="zip" type="text" required />
+                <label>ZIP</label>
+                <span class="zip">Error Message</span>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>        
+        </section>     
+        
+        <section>
+            <div>
+                <h1>Raw Data</h1>
+                <textarea></textarea>
+            </div>
+        </section>
+        
+        <section>
+            <div>
+                <h1>Entries</h1>
+                <div class="table"></div>
+            </div>
+        </section>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
