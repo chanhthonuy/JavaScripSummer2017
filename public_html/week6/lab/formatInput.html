@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+        Number <input name="num" type="text" pattern="([0-9]{3})([0-9]{3})([0-9]{4})"/>
+
+
+        <script>
+
+            let inputField = document.querySelector('input[name=num]')
+
+            inputField.addEventListener('blur', checkInput)
+
+
+            function checkInput() {
+
+                let numberOnlyRe = /([0-9]{3})([0-9]{3})([0-9]{4})/g
+                this.value = this.value.replace(numberOnlyRe, '($1)$2-$3')
+            }
+            inputField.addEventListener('focus', checkFocus)
+
+
+            function checkFocus() {
+
+                let nonumberOnlyRe = /[^0-9]+/g
+                this.value = this.value.replace(nonumberOnlyRe, '')
+
+
+            }
+
+
+        </script>
+    </body>
+</html>

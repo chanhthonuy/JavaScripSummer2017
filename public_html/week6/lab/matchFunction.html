@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+        Address <input name="address" type="text" value= "12345 fake st. Providence, RI 02905" style= "min-width: 500px"/>
+        <button>test</button>
+
+        <script>
+
+            let submitBtn = document.querySelector('button')
+            
+
+
+            submitBtn.addEventListener('click', checkInput)
+
+            function checkInput() {
+                //let numberOnlyRe = /[0-9]{5}$/
+                let inputField = document.querySelector('input[name=address]')
+                let machesFound = inputField.value.match(/[0-9]{5}$/);
+                
+
+               if (machesFound) {                    
+                  console.log(machesFound)
+              }
+               else{
+                console.log(machesFound)
+            } 
+            
+            
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -8,32 +8,37 @@
     </head>
     <body>
         <div>TODO write content</div>
-        <script type="text/javascript">
-            
-           
-            var myArray=[];
-           
-            
-            
-            var label={};
-            
-            label['twoThree']='fizzbuzz';
-            label['two']='fizz';
-            label['three']='buzz';
-            
-                        
-              for (index = 0; index < 100; index++)
-              {
-                 if (index % 2 == 0) {
-                console.log(myArray.push(label['two']));
+        <script>
 
-            } 
-           
-        } 
-            
-            
-        
-          
-            </script>
+            let label = [];
+
+
+            for (var i = 0; i < 100; i++)
+            {
+                label.push({
+                    "label": undefined,
+                    "index": i
+                })
+                if (i % 2 == 0 && i % 3 == 0) {
+                    //console.log('fizz buzz');
+                    label[i].label='fizz buzz'
+
+                } else if (i % 2 == 0) {
+                    //console.log('fizz');
+                    label[i].label='fizz'
+
+                } else if (i % 3 == 0) {
+                    //console.log('buzz');
+                    label[i].label='buzz'
+
+                }  
+                if (label[i].label === 'fizz'){
+                    console.log(label[i])
+                }
+            }
+
+
+        </script>
     </body>
+
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,36 +9,35 @@
     <body>
         <div>TODO write content</div>
         <script>
-            var index={};
-            
-            
-            var label={};
-            
-            label['twoThree']='fizzbuzz';
-            label['two']='fizz';
-            label['three']='buzz';
-            
-                        
-              for (index = 0; index < 100; index++)
+
+            let label = [];
+
+
+            for (var i = 0; i < 100; i++)
             {
-                if (index % 2==0 && index% 3==0) {
-                console.log(label['twoThree']);
+                label.push({
+                    "label": undefined,
+                    "index": i
+                })
+                if (i % 2 == 0 && i % 3 == 0) {
+                    console.log('fizz buzz');
+                    label[i].label='fizz buzz'
 
-            } 
-           else if (index % 2 == 0) {
-                console.log(label['two']);
+                } else if (i % 2 == 0) {
+                    console.log('fizz');
+                    label[i].label='fizz'
 
-            } 
-            else if (index % 3 == 0) {
-                console.log(label['three']);
+                } else if (i % 3 == 0) {
+                    console.log('buzz');
+                    label[i].label='buzz'
 
-            }else{
-                
-            console.log(index); // logs 0 - 100 to the canvas.
+                } else {
+
+                    console.log(i); // logs 0 - 100 to the canvas.
+                }
             }
-        } 
-            
-            
+console.log(label)
+
         </script>
     </body>
 
