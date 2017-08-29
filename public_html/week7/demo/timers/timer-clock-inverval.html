@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1 id="clock">TODO write content</h1>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        
+        <script type="text/javascript">
+             /*
+             
+                setTimeout
+                    executes a function, once, after waiting a specified number of milliseconds
+                setInterval
+                    executes a function, over and over again, at specified time intervals
+                clearTimeout
+                    Used to stop the execution of setTimeout
+                clearInterval
+                    Used to stop the execution of setInterval
+                    These timers are part of the window object.
+             */
+            
+            var clock = document.querySelector('#clock');
+            var clockTimer = window.setInterval(updateClock, 1000);
+            
+            function updateClock() {
+                let newdate = new Date();
+                window.clock.innerHTML = newdate;               
+            }
+                        
+            
+            document.querySelector('button.start').addEventListener('click', startClock);
+            document.querySelector('button.stop').addEventListener('click', stopClock);
+            
+            function startClock() {
+                if ( !window.clockTimer ){
+                    window.clockTimer = window.setInterval(updateClock, 1000);
+                }
+            }
+            
+            function stopClock() {
+                clearInterval(window.clockTimer);  
+                console.log(window.clockTimer);
+                console.log(typeof window.clockTimer);
+                window.clockTimer = null;
+            }
+            
+                      
+            
+            
+        </script>
+        
+    </body>
+</html>

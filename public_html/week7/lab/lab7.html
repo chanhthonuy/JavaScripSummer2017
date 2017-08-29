@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style type="text/css">
+            canvas {
+                border: 1px solid black;
+
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <canvas id="race" width="750" height="150"></canvas>
+        <br />
+        <button id="play">Play</button>
+        
+
+
+        <script type="text/javascript">
+
+            function randNum(max) {
+                return Math.ceil(Math.random() * max) + 1;
+            }
+            //document.querySelector('button.play').addEventListener('click', play);
+
+            var can = document.querySelector('#race');
+            var ctx = can.getContext('2d');
+           
+            var play = document.querySelector('#play');
+            
+            
+
+            function drawBluRect() {
+                /* the fillStyle will color in the whole box with the color selected */
+                window.ctx.fillStyle = "blue";
+                window.ctx.fillRect(bluexaxis, 75, 75, 30); // x, y, width, height
+                ctx.save(); 
+                ctx.restore();
+            }
+           
+            
+             function drawRedRect() {
+                /* the fillStyle will color in the whole box with the color selected */
+                window.ctx.fillStyle = "red";
+                window.ctx.fillRect(redaxis, 30, 75, 30); // x, y, width, height
+                ctx.restore();
+                
+            }
+           
+            
+            function drawClear() {
+                window.ctx.clearRect(0, 0, window.can.width, window.can.height); // x y / w h
+            }
+            var width = 100,
+                    height = 100,
+                    bluexaxis = 0,
+                    redaxis = 0;
+
+            var canvasBottom = (window.can.height - window.height);
+            var canvasRight = 625;
+                                         
+          
+            window.addEventListener('load', moveRect);
+            
+            function drawLine() {
+                window.ctx.beginPath();
+                window.ctx.moveTo(700, 0); //x, y
+                window.ctx.lineTo(700, window.can.height );
+                window.ctx.lineTo(window.can.width, window.can.height);
+                //window.ctx.moveTo(0, 20); //x, y
+                //window.ctx.lineTo(window.can.width, 20);
+                // create a for loop that will create lines across the canvas
+                 
+
+                window.ctx.stroke();
+                
+               
+            }
+            play.addEventListener('click', moveRect);
+            
+           function moveRect(){
+               play.style.display ="none";
+                 window.drawClear();
+                    window.drawLine();
+                    window.bluexaxis += randNum(20);
+                    window.redaxis += randNum(20);
+                    drawRedRect();
+                    drawBluRect();
+                if (window.bluexaxis < window.canvasRight && window.redaxis < window.canvasRight) {
+                    
+                    
+                    setTimeout(window.moveRect, 100);
+                    
+                } else {
+                    window.reset();
+                }
+                
+            }
+           
+            function reset() {
+               
+                if (window.redaxis  > window.canvasRight){
+                    window.ctx.fillText("Red Wins!", 350, window.can.height-10);
+                }else{
+                    window.ctx.fillText("Blue Wins!", 350, window.can.height-10);
+                }
+                
+                
+                 window.redaxis = 0;
+                window.bluexaxis = 0;
+                play.style.display ="inline";
+            }
+
+
+
+        </script>
+    </body>
+</html>
