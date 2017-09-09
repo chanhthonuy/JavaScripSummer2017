@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            
+            var content = document.querySelector('div')
+            var myRequest = 'users.json'
+            
+            fetch(myRequest).then(function(response) {
+                var contentType = response.headers.get("content-type")
+                console.log(response)
+                console.log(contentType)
+                if(contentType && contentType.includes("json")) {
+                  return response.json()
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            })
+            .then(function(json) { 
+                content.innerHTML = JSON.stringify(json)
+                console.log(json)
+            })
+            .catch(function(error) { 
+                content.innerHTML = error
+                console.log(error)
+            })
+
+        </script>
+    </body>
+</html>

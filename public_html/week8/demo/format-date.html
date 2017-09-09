@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+            /* 
+             * The date is clustred in one line.  Create 3 varialbes to seperate the date.
+             * One for the new Date object.
+             * One for the config.
+             * One for the Date Format
+             */
+            let newDate = new Date()
+            let dateConfig =  {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'}
+            let formatDate = new Date('2017-09-05')
+            
+            let todayFormattedDate = new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+            let formattedDate = new Date('2014-09-12 11:03:02').toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+                        
+                        
+            document.querySelector('div').innerHTML = `<p>formattedDate: ${formattedDate}</p>
+            <p>todayFormattedDate: ${todayFormattedDate}</p>`
+            
+        </script>
+        
+    </body>
+</html>

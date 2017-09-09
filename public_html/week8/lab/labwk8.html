@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <script>
+
+            var content = document.querySelector('#div2')
+            var myRequest = 'companies.json'
+            var companies 
+       
+
+            fetch(myRequest).then(handleResponse)
+                    .then(responseSuccess)
+                    .catch(responseError);
+
+
+            function handleResponse(response) {
+                let contentType = response.headers.get("content-type");
+
+                if (contentType && contentType.includes("json")) {
+                    return response.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
+
+
+
+            function responseSuccess(json) {
+               companies = json;
+                var htmlstr = "";
+
+                for (let i = 0; i < companies.length; i++) {
+                    htmlstr += `<p data-number="${i}" class="comp">`;
+                    htmlstr += companies[i].company
+                    htmlstr += '</p>';
+                }
+                document.querySelector("#div1").innerHTML = htmlstr;
+                
+                let comps = document.querySelectorAll(".comp")
+                
+                for (let x = 0; x < comps.length; x++){
+                    comps[x].addEventListener('click', function(){
+                        let i = this.dataset.number
+                        let about = companies[i].about
+                        let registered = companies[i].registered
+                        content.innerHTML= `${about} <p> ${registered}</p>`
+                    })
+                }
+                              
+            }
+
+            function responseError(error) {
+                content.innerHTML = error;
+            }
+            
+                
+        </script>
+    </body>
+</html>

@@ -1,81 +1,38 @@
 
-<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Week 2 Files</title>
-<style type="text/css">
-	.border{border:1px solid black;}
-</style>
-</head>
 
-<body>
+    <body>
 
 
-<script type="text/javascript">
-	//Use this Array of objects to complete the assignment.
-	var people =[
-		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
-		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
-		{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
-		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
-		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
-		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
-		{first:"Marion", last:"Cobretti", credit:"Cobra" }
-	]
-        
-          var  div = document.getElementsByTagName('div');  
-             var htmlstr="";
-             for(var i = 0; i <people[i]; i++)
-             
-             htmlstr += "<div id='" + people[i].first + "' class='border'>"
-             htmlstr += "<p>"; 
-             htmlstr += people[i].first;// + " "+ people[i].last + " " + people[i].credit;             
-             htmlstr += "</p>"; 
-             htmlstr += "</div>"; 
-             
-             htmlstr += "<p>"; 
-             htmlstr += people[i].last;//  + " "+ people[i].last + " " + people[i].credit;
-             htmlstr += "</p>"; 
-             htmlstr += "</div>"; 
-             
-             htmlstr += "<p>"; 
-             htmlstr += people[i].credit;// + " "+ people[i].last + " " + people[i].credit;
-             htmlstr += "</p>"; 
-             htmlstr += "</div>"; 
-         
-        //div.innerHTML+=htmlstr;
-            document.body.innerHTML +=htmlstr;;
-            var htmlcontents= div.innerHTML;
-            console.log(htmlcontents);
-             
-        
-            /* htmlStr += '<p>Water</p>'; 
-             htmlStr += '<p>Earth</p>'; 
-             htmlStr += '<p>Fire</p>'; 
-             div.innerHTML+=htmlStr;
-            document.body.innerHTML +='<p>Water</p>';
-            var htmlcontents= div.innerHTML;
-            console.log(htmlcontents);*/
-            
-                   
-      /* for (let i in people )
-        {
-            //let tempDiv = document.createElement("div")
-            //let p = document.createElement("p")
-            let textnode = document.createTextNode(people[i].first + " "+ people[i].last + " " + people[i].credit);
-            p.appendChild(htmlStr);
-            tempDiv.appendChild(p);
-            document.body.appendChild(tempDiv);
-             tempDiv.classList.add('border');
-             tempDiv.setAttribute("id", String(i));*/
-             
-            /*  document.body.innerHTML ="people";
-            var htmlcontents= div.innerHTML;
-            console.log(htmlcontents);*/
-        
-        
-       
-</script>
-</body>
+        <div id ="div1"></div>
+
+        <script type="text/javascript">
+            //Use this Array of objects to complete the assignment 
+
+            var people = [{first: "Jason", last: "Vorhees", credit: "Friday the 13th"},
+                {first: "Freddy", last: "Krueger", credit: "A Nightmare on Elm Street"},
+                {first: "Roger", last: "Rabbit", credit: "Who Framed Roger Rabbit"},
+                {first: "Kevin", last: "McCallister", credit: "Home Alone"},
+                {first: "Godzilla", last: "King of The Monsters", credit: "Godzilla"},
+                {first: "Buzz", last: "Lightyear", credit: "Toy Story"},
+                {first: "Marion", last: "Cobretti", credit: "Cobra"}]
+
+            var div = document.getElementsByTagName('div');
+
+            var htmlstr = "";
+
+            for (var i = 0; i < people.length; i++)
+            {
+                htmlstr += "<div><p>";
+                htmlstr += people[i].first;
+                htmlstr += " ";
+                htmlstr += people[i].last;
+                htmlstr += "       ";
+                htmlstr += people[i].credit;
+                htmlstr += "</p></div>";
+            }
+            document.getElementById("div1").innerHTML = htmlstr;
+
+        </script>
+    </body>
 </html>

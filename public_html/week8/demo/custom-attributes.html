@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+            div {
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div data-index="3" data-time="0">TODO write content</div>
+        
+        
+        <script>
+            /*
+             * In the html add a a custom attribute called time, the value can be empty
+             * In the event listener set the custom attribute value with the variable time.
+             * Display the attribute value in the console.
+             * You can also use the inspect tool to see the changes.
+             */
+            var div = document.querySelector('div')
+            
+            console.log( div.dataset, div.dataset.index, div.getAttribute('data-index'));
+            
+            div.addEventListener('click', function(){
+                let randIndex = Math.ceil(Math.random()*10) + 1
+                let time = new Date().getTime()
+                this.setAttribute('data-time', time)
+                this.dataset.time = time
+                this.dataset.index = randIndex
+                console.log( this.dataset, this.dataset.index, this.getAttribute('data-index'));                
+            })  
+        </script>
+    </body>
+</html>

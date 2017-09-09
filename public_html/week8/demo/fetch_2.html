@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            
+            var content = document.querySelector('div')
+            var myRequest = 'companies.json'
+            
+            fetch(myRequest).then(handleResponse)
+            .then(responseSuccess)
+            .catch(responseError);
+    
+            function handleResponse(response) {
+                let contentType = response.headers.get("content-type");
+               
+                if(contentType && contentType.includes("json")) {
+                  return response.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
+            
+            function responseSuccess(json) {
+                content.innerHTML = JSON.stringify(json);
+            }
+            
+            function responseError(error) {
+                content.innerHTML = error;
+            }
+
+        </script>
+    </body>
+</html>
