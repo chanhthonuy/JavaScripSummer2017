@@ -31,6 +31,9 @@ function insertValueIntoInput(){
  * @return {String} The value
  */
 function insertClassNameIntoInput(){
+    let inputField = document.querySelector('input[name=fullname]')
+    inputField.className = "field"
+    return "field"
 
 }
 
@@ -41,6 +44,17 @@ function insertClassNameIntoInput(){
  * @return {void}
  */
 function buttonEvent(){
+if ( inputField.value.length ) {
+        
+        people.classList.remove('error');
+        let result = '<p>' + inputField.value + '</p>';
+        divToAdd.innerHTML += result;
+        
+        inputField.value='';
+        
+     } else {
+        people.classList.add('error'); 
+     }
 
 }
 
